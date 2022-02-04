@@ -1,0 +1,33 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.logo {
+  display: flex;
+  height: 40px;
+  align-items: center;
+}
+.logo > img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.header_wrap {
+  display: flex;
+  font-size: 10px;
+  gap: 10px;
+}
+
+.category {
+  display: flex;
+  gap: 4px;
+}
+
+.category > a{
+  color: gray;
+}
+
