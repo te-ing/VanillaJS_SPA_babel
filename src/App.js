@@ -1,5 +1,6 @@
 import Header from "./Header";
 import Section from "./Section"
+import Contents from "./Contents"
 
 export default function App({ $target }) {
   this.state = {
@@ -20,5 +21,12 @@ export default function App({ $target }) {
       this.state.section = id;
       console.log(this.state.section);
     }
+  })
+
+  const contents = new Contents({
+    $target,
+    initialState: {
+      section: this.state.section,
+    },
   })
 }
