@@ -1,6 +1,6 @@
 export default function Header({ $target }) {
   const $Header = document.createElement('div')
-  $Header.className = 'Header'
+  $Header.className = 'header'
   $target.appendChild($Header)
 
   $Header.innerHTML = `

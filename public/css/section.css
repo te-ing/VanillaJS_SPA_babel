@@ -1,0 +1,33 @@
+.section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  float: left;
+  padding: 6px;
+}
+
+.menu > li:hover {
+  color: mediumblue;
+  cursor: pointer;
+}
+
+.user_menu > li {
+  float: left;
+  padding: 6px;
+  color: gray;
+}
+
+.menu_focus {
+  color: mediumblue;
+  border-bottom: 2px solid;
+}
