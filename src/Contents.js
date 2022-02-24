@@ -16,14 +16,27 @@ export default function Contents({ $target, initialState }) {
   <div class="contents">
     <article class="article_container">
       <article class="article_main">
-        <img src=${culture[0].imageUrl} />
+        <img class="article_img" src=${culture[0].imageUrl} />
+        <div class="article_title article_title_main">
+          <div>카테고리</div>
+          <h4>한국 연예인도 따라 입는 레깅스 패션 선두주자들</h4>
+          <h6>언론사명</h6>
+        </div>
         </article>
       <article class="article_sub_container">
         <article class="article_sub">
-          <img src=${culture[1].imageUrl} />
+          <img class="article_img" src=${culture[1].imageUrl} />
+          <div class="article_title">
+            <h5>10억년 신비 품은 해변 따라 삼각산 돌아보니 황제의 氣 꿈틀</h5>
+            <h6>언론사명</h6>
+        </div>
         </article>
         <article class="article_sub">
-          <img src=${culture[2].imageUrl} />
+          <img class="article_img" src=${culture[2].imageUrl} />
+          <div class="article_title">
+            <h5>10억년 신비 품은 해변 따라 삼각산 돌아보니 황제의 氣 꿈틀</h5>
+            <h6>언론사명</h6>
+        </div>
       </article>
     </article>
   </div>
