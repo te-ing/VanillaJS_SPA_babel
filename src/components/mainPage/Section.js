@@ -10,27 +10,30 @@ export default function Section({ $target, initialState, onClick }) {
     this.render()
   }
 
-  $Section.innerHTML = `
-    <ul class="menu">
-      <li class="menu_home">홈</li>  
-      <li class="menu_life">라이프</li>
-      <li class="menu_food">푸드</li>
-      <li class="menu_travel">여행</li>
-      <li class="menu_culture">컬처</li>
-    </ul>
 
-    <ul class="user_menu">
-      <li>최근 읽은 글</li>  
-      <li>채널</li>
-    </ul>
-  `
-  const $FocusMenu = document.querySelector(`.menu_${this.state.section}`);
-  $FocusMenu.classList.add("menu_focus")
+  this.render = () => {
+    $Section.innerHTML = `
+      <ul class="menu">
+        <li class="menu_home">홈</li>  
+        <li class="menu_life">라이프</li>
+        <li class="menu_food">푸드</li>
+        <li class="menu_travel">여행</li>
+        <li class="menu_culture">컬처</li>
+      </ul>
+
+      <ul class="user_menu">
+        <li>최근 읽은 글</li>  
+        <li>채널</li>
+      </ul>
+    `;
+    document.querySelector(`.menu_${this.state.section}`)
+      ? document.querySelector(`.menu_${this.state.section}`).classList.add("menu_focus")
+      : document.querySelector(`.menu_home`);
+  };
+  
 
   $Section.addEventListener("click", (e) => {
-    if(e.target.nodeName !== "LI") return
-    onClick(e.target.className.substring(5));
+    if (e.target.nodeName !== "LI") return
+    onClick(e.target.className.substring(5).split(" ")[0]);
   })
-  
-  // this.render()
 }

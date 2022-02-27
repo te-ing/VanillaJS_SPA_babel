@@ -1,24 +1,21 @@
-window.onload = () => {
-  const main = document.querySelector("main");
+const ROUTE_CHANGE_EVENT_NAME = 'route-change';
 
-  const handleLocationChange = (e) => {
-      console.log("locationchanged");
+export const initRouter = (onRoute) => {
+    window.addEventListener(ROUTE_CHANGE_EVENT_NAME, (e) => {
+        const { nextUrl } = e.detail;
+        if (nextUrl) {
+            history.pushState(null, null, nextUrl);
+            onRoute();
+        }
+    });
+};
 
-      //* 주소변경
-      window.history.pushState(undefined, "타이틀", "/some");
-  };
-
-  //* locationchange 이벤트리스너
-  window.addEventListener("locationchange", handleLocationChange);
-
-  main.innerHTML = "<div><button type='button'>move to /some</button></div>";
-
-  const button = document.querySelector("button");
-  button.addEventListener("click", () => {
-      const locationChangeEvent = new CustomEvent("locationchange", {
-          composed: true, //웹 컴포넌트라면 넣어주세요
-      });
-      //* 주소변경 이벤트 Dispatch
-      window.dispatchEvent(locationChangeEvent);
-  });
+export const route = (nextUrl) => {
+    window.dispatchEvent(
+        new CustomEvent(ROUTE_CHANGE_EVENT_NAME, {
+            detail: {
+                nextUrl,
+            },
+        })
+    );
 };
