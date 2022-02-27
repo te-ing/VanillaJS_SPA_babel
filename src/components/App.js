@@ -1,6 +1,6 @@
-import Header from "./Header";
-import Section from "./Section"
-import Contents from "./Contents"
+import Header from "./mainPage/Header";
+import Section from "./mainPage/Section"
+import Contents from "./mainPage/Contents"
 
 export default function App({ $target }) {
   this.state = {

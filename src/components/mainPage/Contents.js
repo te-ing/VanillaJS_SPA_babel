@@ -1,4 +1,4 @@
-import { ranking, life, food, travel, culture } from "./DUMMY"
+import { ranking, life, food, travel, culture } from "../../utils/DUMMY"
 
 export default function Contents({ $target, initialState }) {
   const $Contents = document.createElement('div')
